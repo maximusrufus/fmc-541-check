@@ -18,7 +18,7 @@ billing party, billed party, charge type. Every other field the invoice
 presumably contained is **genuinely unknown to us**, not absent from the
 real document.
 
-### 46 CFR 541.7(a) — timing — VALIDATED against a real, adjudicated finding
+### 46 CFR 541.7(a) — timing — reproduces the arithmetic stated in a real FMC order
 
 Running `demurragedesk.ingest` + `screen_invoice` on the record:
 
@@ -35,7 +35,7 @@ issued more than 30 days after the date on which the last charge was
 incurred." The order's stated range for the 159 invoices is **142-316 days
 late** (¶28); this record uses the low end (142 days, the least-favorable
 case for finding a violation) and the tool independently reproduces the
-Commission's finding exactly. **1 of 1 real, adjudicated 541.7(a) cases
+figure stated in the order exactly. **1 of 1 real 541.7(a) fact patterns
 tested: parser recall = 1/1 (100%), true-miss rate = 1/1 (100%)** — i.e. the
 one real invoice the FMC itself found late, the parser also finds late, with
 the exact day count the order states. This is the single strongest evidence

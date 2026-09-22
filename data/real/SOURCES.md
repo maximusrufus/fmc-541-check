@@ -16,7 +16,8 @@ gap is falsifiable rather than asserted. Fetches used
   final 200; PDF, 11 pages) — saved as
   `fmc_cc002_order_to_show_cause_20260306.pdf` in this directory.
 - Listing page: `https://www2.fmc.gov/readingroom/proceeding/CC-002/` (200).
-- This is a **real, adjudicated FMC order**, not a specimen. It quotes exact
+- This is a **real FMC show-cause order** in a PENDING proceeding, not a specimen and not a
+  final decision. It quotes exact
   facts about 159 real invoices (Attachment A) that the Commission found:
   originally issued 2-13 days after the last charge (compliant with
   46 CFR 541.7(a)), then **reissued** on 2025-04-18 for the same charges,
