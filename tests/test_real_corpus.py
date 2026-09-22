@@ -26,13 +26,13 @@ def test_cc002_source_files_present():
 
 
 def test_cc002_541_7a_matches_the_real_fmc_finding():
-    """46 CFR 541.7(a): the tool must reproduce the Commission's own finding.
+    """46 CFR 541.7(a): the tool must reproduce the arithmetic the order states.
 
     FMC Docket CC-002 order, paragraphs 18-32 (real order, served 2026-03-06):
     the reissued invoice was issued 142 calendar days after the date the
     charge was last incurred (the low end of the order's stated 142-316 day
     range for the 159 reissued invoices), which the Commission found violated
-    46 CFR 541.7(a). This is the single real, adjudicated data point in the
+    46 CFR 541.7(a). This is the single real-world data point in the
     corpus -- see data/real/MEASURED.md.
     """
     text = CC002_RECORD.read_text(encoding="utf-8")
