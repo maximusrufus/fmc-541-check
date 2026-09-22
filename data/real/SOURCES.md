@@ -66,8 +66,8 @@ sandbox) might reach content curl cannot.
 | Page | Status | Finding |
 |---|---|---|
 | `invoicedataextraction.com/blog/demurrage-detention-invoice-processing` | 200 | JS-rendered app shell; no invoice image/PDF in the static HTML fetched |
-| `bluecargo.io/osra-faq` | 200 | Same — marketing site is JS-rendered, only icons in static HTML |
-| `elleraudit.com/ocean-freight-audit` | 200 | Same |
+| a freight-audit SaaS vendor FAQ page | 200 | Same — marketing site is JS-rendered, only icons in static HTML |
+| an ocean-freight-audit firm service page | 200 | Same |
 | `gocubic.io/guides/.../demurrage-detention-dispute-playbook-2026` | 200 | Same |
 | `flexport.com/blog/demurrage-and-detention-guide/` | 404 | Page does not exist at guessed URL |
 | `freightright.com/blog/how-to-read-your-demurrage-invoice` | 404 | Page does not exist at guessed URL |
