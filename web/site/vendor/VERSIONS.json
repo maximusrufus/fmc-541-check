@@ -1,0 +1,26 @@
+{
+  "generated_by": "scripts/fetch_vendor.mjs",
+  "packages": {
+    "pyodide": {
+      "version": "314.0.7",
+      "tarball": "https://registry.npmjs.org/pyodide/-/pyodide-314.0.7.tgz",
+      "integrity": "sha512-0YvXxEhfEdpLfb/XkM2BFAeMROq0iMUX2bzzH9pOttyMcWkwq+HbE5uyuGD82LN7y2q+SNvi/6V5JEsOlD2R1A==",
+      "files": {
+        "pyodide.mjs": "6f1d60f7bf529beb300f0f47983c921d3982363640ba20af0e38efdddbc66109",
+        "pyodide.asm.mjs": "f7cdc8ece80678ceb712f8e65ebe6d3a83203a180c399865f49612a051693635",
+        "pyodide.asm.wasm": "cc36e3cab04fdfc9a63ff13eb52eae2b911bf46c025cc7b281f394bd3de1d5e6",
+        "python_stdlib.zip": "fa1957e5777068fc4f7437f96d860ae2fbe9c19732ba06c84e004ec16dd7dd7a",
+        "pyodide-lock.json": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010"
+      }
+    },
+    "pdfjs-dist": {
+      "version": "6.3.289",
+      "tarball": "https://registry.npmjs.org/pdfjs-dist/-/pdfjs-dist-6.3.289.tgz",
+      "integrity": "sha512-ZHjSVpDa3D6izMq8/04lvkhkATUmL9px6ChPaXc1k6nU2Mrhlg1/7F0bdUqCwUjw3NsPTfPZsMDUU6ZIcRaeQw==",
+      "files": {
+        "pdf.min.mjs": "f401927e692efc7735e0cd528c490d0dd31b7f0972c122b7040df805be45cce4",
+        "pdf.worker.min.mjs": "a33cfe728c584fdba4fcc1fd54bcdc2f9f2f13889ddbb5b2bd1d0f8cbe49b84e"
+      }
+    }
+  }
+}

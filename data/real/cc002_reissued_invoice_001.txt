@@ -1,0 +1,21 @@
+REAL-CASE-DERIVED TEST RECORD -- NOT THE ORIGINAL INVOICE
+Source: FMC Docket CC-002, Order Directing Hapag-Lloyd AG to Show Cause,
+served 2026-03-06 (public order, paragraphs 18-32; see
+fmc_cc002_order_to_show_cause_20260306.pdf and SOURCES.md in this directory).
+The original invoice exhibits (Attachment A) are not in the public record.
+This file states ONLY facts the public order asserts verbatim about one of
+the 159 reissued invoices, at the low end of the date range the order gives
+(date charge last incurred 2024-11-27; "Initial Invoice" issued 2024-12-10,
+13 days later, compliant with 541.7(a); "Reissued Invoice" for the same
+charge dated 2025-04-18, which the Commission found violated 541.7(a)).
+Every other data point a real invoice would carry is deliberately left OUT
+rather than invented -- see MEASURED.md for why that means the 541.6
+element-presence check cannot be validated on this record.
+
+Invoice Number: CC002-ATTACHMENT-A-REISSUED-001 (reissued invoice; original
+invoice number not disclosed in the public order)
+Invoice Date: 2025-04-18
+Last Incurred: 2024-11-27
+Billing Party: Hapag-Lloyd AG (billed by Hapag-Lloyd (America) LLC per the order, paragraph 19)
+Billed Party: Oceana Global Logistics, LLC
+Charge Type: demurrage

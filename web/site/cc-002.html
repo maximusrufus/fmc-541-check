@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the FMC found in Docket CC-002, and what the checker reproduces</title>
+<meta name="description" content="The real FMC order behind DemurrageDesk's 46 CFR 541.7(a) check, quoted with cites, and an honest statement of what is and is not validated against real invoices.">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="wrap">
+  <p class="eyebrow">DemurrageDesk</p>
+  <h1>What the FMC found in Docket CC-002</h1>
+  <p class="lede">
+    One real, adjudicated Federal Maritime Commission order, and exactly what this checker
+    reproduces from it &mdash; no more.
+  </p>
+</header>
+
+<main class="wrap">
+
+<section id="what-happened" aria-labelledby="what-happened-h">
+  <h2 id="what-happened-h">What happened</h2>
+  <p>
+    On March 6, 2026, the Federal Maritime Commission served an
+    <strong>Order Directing Hapag-Lloyd AG to Show Cause</strong> in
+    <strong>Docket No. CC-002</strong>, an investigation under 46 U.S.C. &sect; 41104(a) brought
+    under the charge-complaint procedures of 46 U.S.C. &sect; 41310. The complainant was Oceana
+    Global Logistics, LLC, a party billed for detention and demurrage charges by Hapag-Lloyd.
+  </p>
+  <p>
+    The order recounts that Oceana had already disputed 167 of Hapag-Lloyd's original invoices in
+    an earlier complaint; Hapag-Lloyd cancelled all 167 and, on April 18, 2025, reissued 159 of
+    them under the same invoice numbers, billing the same charges. Oceana's second complaint,
+    the subject of this order, disputed those 159 reissued invoices. The order states, of those
+    159 invoices: nine assessed detention charges and 150 assessed demurrage charges; the date
+    each charge was last incurred ranges from June 6, 2024 to November 27, 2024; the original
+    &ldquo;Initial Invoice&rdquo; dates ranged 2&ndash;13 days after the last charge, within the
+    30-day window; and every one of the 159 carries a &ldquo;Reissued Invoice&rdquo; date of
+    April 18, 2025 &mdash; <strong>142 to 316 days</strong> after the date the last charge was
+    incurred (&para;&para;20&ndash;28).
+  </p>
+  <p>
+    The Commission's finding: &ldquo;All 159 invoices identified in Attachment A were issued more
+    than 30 days after the date on which the last charge was incurred&rdquo; (&para;29), so
+    &ldquo;Respondent's failure to issue the detention and demurrage invoices within 30 days
+    after the date on which the last charge was incurred in violation of 46 C.F.R. &sect;541.7(a)
+    removes Complainant's obligation to pay the charges&rdquo; (&para;32). The order directs
+    Hapag-Lloyd to show cause why the Commission should not order the waiver or cancellation of
+    all 159 invoices, totaling <strong>$1,191,470.00</strong> (&para;35), and why a civil penalty
+    should not follow under 46 U.S.C. &sect;&sect;41310(d), 41107 and 41109.
+  </p>
+  <p class="hint">
+    This is a show-cause order, not a final decision: the Commission directed Hapag-Lloyd to
+    respond by March 31, 2026, and stated the final decision would issue no later than June 8,
+    2026 (extendable by Commission order). The facts above are the Commission's own allegations
+    as stated in the order; they are not restated here as a final adjudication of liability.
+  </p>
+  <p>
+    Source: FMC Docket CC-002 docket listing,
+    <a href="https://www2.fmc.gov/readingroom/proceeding/CC-002/">www2.fmc.gov/readingroom/proceeding/CC-002/</a>.
+    The order itself is saved locally in this repository's real-data corpus
+    (<code>data/real/fmc_cc002_order_to_show_cause_20260306.pdf</code>) and was originally
+    retrieved from <a href="https://www2.fmc.gov/readingroom/documents/135094">www2.fmc.gov/readingroom/documents/135094</a>.
+  </p>
+</section>
+
+<section id="the-rule" aria-labelledby="the-rule-h">
+  <h2 id="the-rule-h">The rule, verbatim</h2>
+  <p>
+    Two provisions of 46 CFR part 541 do the work. Both are quoted here exactly as encoded in
+    this project's <code>demurragedesk/rules.py</code>, retrieved verbatim from the GPO/govinfo
+    CFR XML and the eCFR versioner API, which agreed word for word.
+  </p>
+  <div class="ground unpayable">
+    <p class="cite">46 CFR 541.7(a)</p>
+    <p class="consequence">Unpayable</p>
+    <blockquote>
+      &ldquo;A billing party must issue a demurrage or detention invoice within thirty (30)
+      calendar days from the date on which the charge was last incurred. If the billing party
+      does not issue a demurrage or detention invoice within thirty (30) calendar days from the
+      date on which the charge was last incurred, then the billed party is not required to pay
+      the charge.&rdquo;
+    </blockquote>
+  </div>
+  <div class="ground unpayable">
+    <p class="cite">46 CFR 541.5</p>
+    <p class="consequence">Unpayable</p>
+    <blockquote>
+      &ldquo;Failure to include any of the required minimum information in this part in a
+      demurrage or detention invoice eliminates any obligation of the billed party to pay the
+      applicable charge.&rdquo;
+    </blockquote>
+  </div>
+  <p>
+    46 CFR 541.6 lists the required minimum content behind 541.5 &mdash; 20 elements in five
+    groups (19 apply to an import invoice, 18 to an export invoice):
+  </p>
+  <ul class="hint">
+    <li><strong>(a) Identifying (4):</strong> bill of lading number(s); container number(s); for
+      imports, the port(s) of discharge; the basis for why the billed party is liable.</li>
+    <li><strong>(b) Timing (8):</strong> invoice date; invoice due date; allowed free time in
+      days; start date of free time; end date of free time; for imports, container availability
+      date; for exports, earliest return date; the specific date(s) charged.</li>
+    <li><strong>(c) Rate (3):</strong> total amount due; the applicable tariff/contract rule the
+      rate is based on; the specific rate per that rule or contract.</li>
+    <li><strong>(d) Dispute (3):</strong> contact information for questions or a mitigation
+      request; a digital means (URL, QR code, or watermark) to a page describing what is needed
+      to request mitigation, refund, or waiver; the defined timeframes for that request and its
+      resolution.</li>
+    <li><strong>(e) Certifications (2):</strong> that the charges are consistent with the
+      Commission's demurrage and detention rules, including 46 CFR 545.5; and that the billing
+      party's own performance did not cause or contribute to the charges.</li>
+  </ul>
+  <p class="hint">
+    46 CFR 541.4, which once limited who could be invoiced, is <strong>vacated</strong> &mdash;
+    the eCFR text reads &ldquo;[Reserved]&rdquo; as of 2026-09-01. It is kept in this project's
+    rule set only so its withdrawal is visible, and it never raises a defect. 46 CFR 502.303 is
+    likewise not a live citation anywhere on this site.
+  </p>
+</section>
+
+<section id="what-reproduces" aria-labelledby="what-reproduces-h">
+  <h2 id="what-reproduces-h">What the checker reproduces &mdash; and what it does not</h2>
+  <p>
+    The public order does not attach the reissued invoice itself &mdash; the exhibits to
+    Attachment A are not in the public record. So this project built one test record,
+    <code>data/real/cc002_reissued_invoice_001.txt</code>, using <strong>only</strong> the facts
+    the order states verbatim: the date the charge was last incurred (November 27, 2024, the
+    latest date in the order's range) and the reissued invoice date (April 18, 2025). Running
+    this project's own timing check on that record independently computes
+    <strong>142 calendar days</strong> from charge to invoice, <strong>112 days beyond</strong>
+    the 30-day limit in 541.7(a) &mdash; matching the low end of the Commission's own stated
+    142&ndash;316 day range for the 159 invoices, and matching the Commission's own violation
+    finding. This reproduction is pinned by an automated test in this repository
+    (<code>tests/test_real_corpus.py</code>) so it cannot silently drift.
+  </p>
+  <p>
+    <strong>This is one real data point, not a validated corpus.</strong> It is derived entirely
+    from facts a public FMC order states about a real, adjudicated matter; it is not the original
+    invoice, because the original invoice is not public. The 541.6 element-presence check
+    (whether the 20 required fields are present) has <strong>zero real-invoice validation</strong>
+    in this reproduction, because the public order never discloses whether the reissued invoices
+    carried those fields &mdash; the checker correctly reports every one of them as
+    &ldquo;not found&rdquo; on this record, which is honest about what the source document does
+    and does not tell us, not a measurement of a real invoice's actual completeness. This tool has
+    never been run against a live carrier invoice.
+  </p>
+</section>
+
+<section id="cannot" aria-labelledby="cannot-h">
+  <h2 id="cannot-h">What this checker cannot do</h2>
+  <ul>
+    <li>It cannot verify that the free time, daily rate, or tariff rule printed on an invoice
+      match the actual service contract, terminal schedule, or filed tariff &mdash; that needs
+      the contract, which the checker never sees.</li>
+    <li>It checks that a required element is <em>present</em>, not that it is <em>true</em>. An
+      element that is there but wrong will pass unless the person reviewing it flags it.</li>
+    <li>It is not legal advice and creates no attorney-client relationship.</li>
+    <li>It does not file, send, or submit anything on anyone's behalf, and it holds no data by
+      default &mdash; the output is a document a person reviews and sends themselves.</li>
+  </ul>
+</section>
+
+<section id="closing" aria-labelledby="closing-h">
+  <h2 id="closing-h">If you have real invoices</h2>
+  <p>
+    If you hold ninety days of paid D&amp;D invoices and want the measured miss rate, the checker
+    runs entirely in your browser; nothing is uploaded and nothing needs to be sent anywhere.
+    If the parser misreads your carrier's invoice layout, open an issue on the project's GitHub
+    repository with a redacted sample.
+  </p>
+  <p><a href="index.html">&larr; Back to the checker</a></p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>Source order: FMC Docket CC-002, served March 6, 2026. Not legal advice.</p>
+</footer>
+
+</body>
+</html>
