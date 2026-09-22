@@ -1,0 +1,23 @@
+[project]
+name = "demurragedesk"
+version = "0.1.0"
+description = "Screen ocean demurrage & detention invoices against 46 CFR part 541"
+requires-python = ">=3.11"
+dependencies = ["reportlab", "pypdf"]
+
+[project.optional-dependencies]
+# Scanned (image-only) PDF ingest, lazily imported by demurragedesk.ingest.ocr_pdf.
+# Never a paid API. rapidocr-onnxruntime is pure pip, CPU-only, preferred; it needs
+# a rasterizer (pymupdf, pure pip) or pdf2image (needs a system poppler install).
+ocr = ["rapidocr-onnxruntime", "pymupdf"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["demurragedesk*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

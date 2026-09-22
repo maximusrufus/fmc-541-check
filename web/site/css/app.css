@@ -1,0 +1,120 @@
+:root {
+  --ink: #16202a;
+  --muted: #5a6875;
+  --line: #d8dee4;
+  --bg: #ffffff;
+  --soft: #f5f7f9;
+  --accent: #0b4f6c;
+  --bad: #8c1c13;
+  --bad-bg: #fbeceb;
+  --warn: #7a4c00;
+  --warn-bg: #fdf3e3;
+  --ok: #1c5c39;
+  --ok-bg: #edf6f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.wrap { max-width: 56rem; margin: 0 auto; padding: 0 1.25rem; }
+
+header { padding-top: 2.5rem; border-bottom: 1px solid var(--line); padding-bottom: 1.5rem; }
+.eyebrow { margin: 0; text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; color: var(--muted); }
+h1 { font-size: 1.9rem; line-height: 1.2; margin: .4rem 0 .8rem; }
+h2 { font-size: 1.3rem; margin: 2rem 0 .75rem; }
+h3 { font-size: 1.05rem; margin: 1.5rem 0 .5rem; }
+.lede { font-size: 1.05rem; }
+.privacy { background: var(--soft); border-left: 3px solid var(--accent); padding: .75rem 1rem; }
+.engine-status { color: var(--muted); font-size: .85rem; margin: .5rem 0 0; }
+
+main { padding-bottom: 3rem; }
+section { margin-bottom: 2rem; }
+
+fieldset { border: 1px solid var(--line); border-radius: 6px; padding: 1rem 1.15rem 1.25rem; margin: 0 0 1.25rem; }
+legend { font-weight: 600; padding: 0 .4rem; }
+.optional, .req { font-weight: 400; font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.req { color: var(--bad); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: .9rem 1.1rem; }
+label { display: block; font-size: .9rem; font-weight: 500; }
+input[type=text], input[type=date], input[type=number], select {
+  width: 100%; margin-top: .3rem; padding: .45rem .55rem;
+  border: 1px solid var(--line); border-radius: 4px; font: inherit; font-size: .95rem; background: #fff; color: inherit;
+}
+small { display: block; margin-top: .3rem; font-weight: 400; color: var(--muted); font-size: .8rem; }
+.hint { color: var(--muted); font-size: .9rem; }
+
+.elements .group { margin-bottom: 1.1rem; }
+.elements .group-lead { font-size: .8rem; color: var(--muted); margin: 0 0 .4rem; }
+.element { display: grid; grid-template-columns: 1fr auto; gap: .5rem 1rem; align-items: start; padding: .5rem 0; border-top: 1px solid var(--line); }
+.element .text { font-size: .9rem; }
+.element .cite { display: block; font-size: .75rem; color: var(--muted); }
+.choices { display: flex; gap: .75rem; white-space: nowrap; }
+.choices label { font-weight: 400; font-size: .82rem; display: inline-flex; align-items: center; gap: .25rem; }
+.choices input { margin: 0; }
+
+.facts .fact { padding: .55rem 0; border-top: 1px solid var(--line); }
+.facts .fact label.q { font-weight: 600; font-size: .9rem; }
+.facts .fact .ev { font-size: .8rem; color: var(--muted); }
+.facts .fact .notenum { font-size: .75rem; color: var(--warn); }
+
+.actions { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; margin: 1rem 0; }
+button {
+  font: inherit; font-weight: 600; padding: .55rem 1.1rem; border-radius: 4px;
+  border: 1px solid var(--accent); background: var(--accent); color: #fff; cursor: pointer;
+}
+button.secondary { background: #fff; color: var(--accent); }
+button:disabled { opacity: .55; cursor: progress; }
+.copy-status { font-size: .85rem; color: var(--ok); }
+
+.error { background: var(--bad-bg); border-left: 3px solid var(--bad); color: var(--bad); padding: .6rem .9rem; }
+
+.badge { font-size: .8rem; padding: .2rem .6rem; border-radius: 999px; vertical-align: middle; letter-spacing: .04em; }
+.badge.unpayable { background: var(--bad-bg); color: var(--bad); }
+.badge.disputable { background: var(--warn-bg); color: var(--warn); }
+.badge.clean { background: var(--ok-bg); color: var(--ok); }
+.verdict { font-size: 1.05rem; }
+.amount { color: var(--muted); font-size: .9rem; }
+
+.ground { border: 1px solid var(--line); border-left-width: 4px; border-radius: 4px; padding: .8rem 1rem; margin: .8rem 0; }
+.ground.unpayable { border-left-color: var(--bad); }
+.ground.disputable { border-left-color: var(--warn); }
+.ground .cite { font-weight: 700; font-size: .9rem; }
+.ground .consequence { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.ground blockquote { margin: .5rem 0; padding-left: .8rem; border-left: 2px solid var(--line); color: var(--ink); font-size: .9rem; }
+.ground .math { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; background: var(--soft); padding: .35rem .5rem; border-radius: 3px; display: inline-block; }
+
+.queue { background: var(--soft); border-radius: 4px; padding: .8rem 1rem; }
+.queue li { font-size: .88rem; margin-bottom: .3rem; }
+
+.self-help { background: var(--ok-bg); border-left: 3px solid var(--ok); padding: .7rem 1rem; }
+.letter { background: var(--soft); border: 1px solid var(--line); border-radius: 4px; padding: 1rem; overflow-x: auto; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78rem; line-height: 1.5; white-space: pre-wrap; max-height: 32rem; }
+.scope { background: var(--warn-bg); border-left: 3px solid var(--warn); padding: .7rem 1rem; font-size: .9rem; }
+.offer { border: 1px dashed var(--line); border-radius: 6px; padding: .9rem 1.1rem; background: #fff; }
+.offer h3 { margin-top: 0; }
+
+table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.counts { font-weight: 600; }
+.prov { font-size: .82rem; color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding: 1.25rem 1.25rem 2.5rem; color: var(--muted); font-size: .82rem; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8edf2; --muted: #9aa8b5; --line: #2d3945; --bg: #121a21; --soft: #1a242d;
+    --accent: #6fb3d2; --bad: #ff9f96; --bad-bg: #2e1a18; --warn: #f0c274; --warn-bg: #2d2416;
+    --ok: #86d7a6; --ok-bg: #16281d;
+  }
+  input[type=text], input[type=date], input[type=number], select { background: #0e161c; color: var(--ink); }
+  button { color: #08121a; }
+  button.secondary { background: transparent; color: var(--accent); }
+  .offer { background: var(--soft); }
+}

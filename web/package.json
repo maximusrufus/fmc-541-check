@@ -1,0 +1,18 @@
+{
+  "name": "demurragedesk-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "C:\\Python314\\python.exe scripts/build_engine.py",
+    "build:check": "C:\\Python314\\python.exe scripts/build_engine.py --check",
+    "fixtures": "C:\\Python314\\python.exe scripts/gen_parity_fixtures.py",
+    "serve": "node scripts/serve.mjs 5189",
+    "test": "node --test test/*.test.mjs",
+    "test:e2e": "npm --prefix e2e test",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.136.3"
+  }
+}

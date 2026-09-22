@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check a demurrage or detention invoice against 46 CFR part 541</title>
+<meta name="description" content="Screen an ocean demurrage or detention invoice against the FMC billing rules, in your browser. Nothing is uploaded.">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="wrap">
+  <p class="eyebrow">DemurrageDesk</p>
+  <h1>Check whether you actually owe that demurrage invoice</h1>
+  <p class="lede">
+    The FMC's billing rules say an ocean demurrage or detention invoice issued more than
+    <strong>30 calendar days</strong> after the charge was last incurred is one
+    <strong>&ldquo;the billed party is not required to pay&rdquo;</strong> (46 CFR 541.7).
+    Separately, omitting <em>any</em> required element &ldquo;eliminates any obligation of the
+    billed party to pay the applicable charge&rdquo; (46 CFR 541.5).
+  </p>
+  <p class="privacy" id="privacy-note">
+    <strong>Nothing you type leaves your browser.</strong> The rules run as Python compiled to
+    WebAssembly on this page. There is no upload, no account, no analytics and no server to send
+    an invoice to &mdash; the page is only allowed to talk to its own origin.
+  </p>
+  <p class="engine-status" id="engine-status">Rules engine: not started.</p>
+</header>
+
+<main class="wrap">
+
+<section id="single" aria-labelledby="single-h">
+  <h2 id="single-h">One invoice</h2>
+  <form id="invoice-form" autocomplete="off">
+    <fieldset>
+      <legend>The dates that decide it</legend>
+      <div class="grid">
+        <label>Invoice / reference number
+          <input type="text" id="invoice_id" name="invoice_id" placeholder="optional">
+        </label>
+        <label>Date the charge was <strong>last</strong> incurred <span class="req">required</span>
+          <input type="date" id="charge_last_incurred" name="charge_last_incurred" required>
+        </label>
+        <label>Date the invoice was issued <span class="req">required</span>
+          <input type="date" id="invoice_issue_date" name="invoice_issue_date" required>
+        </label>
+        <label>Date the charge was first incurred
+          <input type="date" id="charge_first_incurred" name="charge_first_incurred">
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Who billed you</legend>
+      <div class="grid">
+        <label>The biller is
+          <select id="billing_party_type" name="billing_party_type">
+            <option value="ocean_common_carrier">The ocean carrier (or terminal)</option>
+            <option value="nvocc">An NVOCC / freight forwarder</option>
+          </select>
+        </label>
+        <label id="upstream-wrap" hidden>Date of the invoice the NVOCC received
+          <input type="date" id="upstream_invoice_issue_date" name="upstream_invoice_issue_date">
+          <small>An NVOCC's 30 days run from the invoice <em>it</em> received (541.7(b)), not from
+            the charge. Leave blank if the invoice does not say &mdash; that itself is reportable.</small>
+        </label>
+        <label>Billing party name
+          <input type="text" id="billing_party" name="billing_party" placeholder="optional">
+        </label>
+        <label>Your company (the billed party)
+          <input type="text" id="billed_party" name="billed_party" placeholder="optional">
+        </label>
+        <label>You were billed as
+          <select id="billed_party_role" name="billed_party_role">
+            <option value="contracting_party">The party that contracted for the service</option>
+            <option value="consignee">The consignee</option>
+            <option value="other">Neither of those</option>
+          </select>
+        </label>
+        <label>Move direction
+          <select id="direction" name="direction">
+            <option value="import">Import</option>
+            <option value="export">Export</option>
+          </select>
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>The invoice itself <span class="optional">all optional</span></legend>
+      <div class="grid">
+        <label>Total amount billed
+          <input type="text" id="total_amount" name="total_amount" inputmode="decimal" placeholder="e.g. 1300.00">
+          <small>Only ever echoed back to you. This page never estimates what you might recover.</small>
+        </label>
+        <label>Daily rate
+          <input type="text" id="daily_rate" name="daily_rate" inputmode="decimal" placeholder="e.g. 325.00">
+        </label>
+        <label>Dates charged
+          <input type="text" id="charged_dates" name="charged_dates" placeholder="2026-03-07, 2026-03-08">
+        </label>
+        <label>Days the invoice allows you to dispute
+          <input type="number" id="stated_dispute_window_days" name="stated_dispute_window_days" min="0" placeholder="e.g. 30">
+        </label>
+        <label>Container number
+          <input type="text" id="container_number" name="container_number" placeholder="optional">
+        </label>
+        <label>Bill of lading
+          <input type="text" id="bill_of_lading" name="bill_of_lading" placeholder="optional">
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Required elements &mdash; 46 CFR 541.6</legend>
+      <p class="hint">
+        Mark each one against the invoice in front of you. <strong>If you are not sure, leave it
+        on &ldquo;not sure&rdquo;</strong> &mdash; an unsure answer never counts against the carrier.
+        It goes on a list of things to check on your document.
+      </p>
+      <div id="elements" class="elements"></div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Anything you can evidence &mdash; 46 CFR 545.5 <span class="optional">optional</span></legend>
+      <p class="hint">
+        These are reasonableness arguments, not billing defects. They only appear in your letter if
+        <strong>you</strong> assert them, and each needs evidence you can produce. Leaving one blank
+        neither alleges it nor waives it.
+      </p>
+      <div id="facts" class="facts"></div>
+    </fieldset>
+
+    <p class="actions">
+      <button type="submit" id="run">Check this invoice</button>
+      <button type="button" id="clear" class="secondary">Clear</button>
+    </p>
+    <p class="error" id="form-error" hidden></p>
+  </form>
+
+  <section id="results" hidden aria-live="polite">
+    <h2>Result <span id="verdict-badge" class="badge"></span></h2>
+    <p id="verdict" class="verdict"></p>
+    <p id="amount-line" class="amount"></p>
+
+    <div id="grounds"></div>
+    <div id="needs-doc"></div>
+    <div id="evidence"></div>
+
+    <h3>Your 46 CFR 541.8 request letter</h3>
+    <p id="self-help" class="self-help"></p>
+    <p class="actions">
+      <button type="button" id="copy-letter">Copy the letter</button>
+      <span id="copy-status" class="copy-status" role="status"></span>
+    </p>
+    <pre id="letter" class="letter"></pre>
+
+    <p id="scope-note" class="scope"></p>
+
+    <aside id="offer" class="offer">
+      <h3>If you would rather not do it yourself</h3>
+      <p>
+        You have everything you need above, and sending it costs you nothing. If you have a stack of
+        these rather than one, we will screen the batch and prepare the letters on contingency &mdash;
+        a share of what is actually cancelled or refunded, nothing if nothing is.
+        <strong>There is no fee to use this page, and no reason to wait for us before sending your
+        own request.</strong>
+      </p>
+    </aside>
+  </section>
+</section>
+
+<section id="batch" aria-labelledby="batch-h">
+  <h2 id="batch-h">Many invoices at once</h2>
+  <p class="hint">
+    Point this at a CSV export from your TMS or accounts-payable system. It is read in your browser
+    like everything else &mdash; the file is never uploaded. Columns it recognises include
+    <code>invoice_number</code>, <code>invoice_date</code>, <code>charge_last_incurred</code>,
+    <code>container</code>, <code>bill_of_lading</code>, <code>total_due</code> and the rest of the
+    541.6 elements. <strong>A column your export does not have is treated as an element the invoice
+    omits</strong>, so check a flagged row against the paper invoice before relying on it.
+  </p>
+  <p class="actions">
+    <input type="file" id="csv-file" accept=".csv,text/csv">
+    <button type="button" id="csv-run">Screen the file</button>
+  </p>
+  <p class="error" id="csv-error" hidden></p>
+  <div id="csv-results" hidden>
+    <p id="csv-counts" class="counts"></p>
+    <table id="csv-table">
+      <thead><tr><th>Invoice</th><th>Verdict</th><th>Ground</th><th>Amount you entered</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p id="csv-errors" class="hint"></p>
+  </div>
+</section>
+
+<section id="limits" aria-labelledby="limits-h">
+  <h2 id="limits-h">What this cannot tell you</h2>
+  <ul>
+    <li><strong>It reads the face of the invoice only.</strong> It cannot check that the free time,
+      daily rate or tariff rule printed on the invoice match your service contract, the terminal
+      schedule or the carrier's filed tariff. That needs your contract, and it is where most
+      substantive overcharges hide.</li>
+    <li><strong>Present is not the same as true.</strong> 541.6 requires each element to be present
+      <em>and</em> accurate. This checks presence. An element that is there but wrong will pass.</li>
+    <li><strong>It never estimates a recovery.</strong> The only money shown is money you typed in.</li>
+    <li><strong>It is not legal advice</strong> and creates no attorney-client relationship. The 30-day
+      windows are read as inclusive of day 30; day 31 is the first late day.</li>
+    <li>Part 541 covers US import/export ocean moves. Nothing here addresses rail, air, or non-US charges.</li>
+  </ul>
+  <p class="prov" id="provenance"></p>
+  <p><a href="cc-002.html">What the FMC found in Docket CC-002, and what this checker reproduces &rarr;</a></p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>Rules bundle <code id="engine-sha">&mdash;</code>. Every quoted rule was retrieved verbatim from
+  the GPO CFR XML and the eCFR versioner API. Not legal advice.</p>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
