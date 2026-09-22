@@ -363,6 +363,10 @@ def mitigation_letter(
         "may submit information concerning this charge to the Federal Maritime "
         "Commission under 46 U.S.C. 41310.",
         "",
+        "",
+        "Screened against 46 CFR part 541 with the open-source checker at "
+        "check.trilatic.com (source: github.com/maximusrufus/fmc-541-check).",
+        "",
         "DISCLAIMER",
         "----------",
         DISCLAIMER,
@@ -453,6 +457,10 @@ def fmc_complaint_packet(
         "refund of charges paid.",
         "",
         _complaint_checklist(result),
+        "",
+        "Screened against 46 CFR part 541 with the open-source checker at "
+        "check.trilatic.com (source: github.com/maximusrufus/fmc-541-check).",
+        "",
         "DISCLAIMER",
         "----------",
         DISCLAIMER,
