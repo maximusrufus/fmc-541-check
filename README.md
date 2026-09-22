@@ -133,7 +133,7 @@ rasterization. Never a paid API, never a network call.
 `data/real/` documents an exhaustive, honest attempt to source real (not
 synthetic) carrier D&D invoices for validation — see `SOURCES.md` for every
 source tried and why each failed to yield one, and `MEASURED.md` for what
-the one real, adjudicated case actually shows. Summary:
+the one real, still-pending case actually shows. Summary:
 
 - **FMC Docket CC-002** (Hapag-Lloyd AG, Order to Show Cause, served
   2026-03-06, a real public FMC order — `fmc_cc002_order_to_show_cause_20260306.pdf`)
@@ -143,7 +143,7 @@ the one real, adjudicated case actually shows. Summary:
 - `cc002_reissued_invoice_001.txt` is a test record built **only** from
   facts the public order states verbatim (it is explicitly not the real
   invoice, which is not in the public record). Running the 541.7(a) timing
-  check against it reproduces the Commission's own finding exactly: 142
+  check against it reproduces the figure the order itself states: 142
   days late, matching the order's cited low end.
 - **The 541.6 element-presence check has zero real-invoice validation.**
   The public order never discloses whether the reissued invoices carried
