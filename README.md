@@ -9,7 +9,9 @@ Two ways to run it:
 
 1. **In the browser, nothing uploaded** — `web/site/index.html`, a static
    page that runs this same Python package under Pyodide, client-side.
-   A hosted copy runs at https://check.trilatic.com — same code, same policy: the page
+   A hosted copy runs at https://check.trilatic.com, and the same engine is one of seven desks
+   under a single matter at https://desks.trilatic.com. Either way, nothing leaves the browser.
+   The original line: — same code, same policy: the page
    is served with `default-src 'self'`, so an invoice you paste never leaves your browser.
 2. **From the command line** — `python -m demurragedesk.ingest`, against a
    CSV export or a single PDF/text invoice.
