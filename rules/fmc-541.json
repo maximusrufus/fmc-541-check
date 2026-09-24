@@ -1,0 +1,413 @@
+{
+  "schema_version": 1,
+  "generated_from": {
+    "package_version": "0.1.0",
+    "retrieved": "2026-09-15",
+    "sources": [
+      "https://www.govinfo.gov/content/pkg/CFR-2025-title46-vol9/xml/CFR-2025-title46-vol9-part541.xml",
+      "https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-46.xml?part=541",
+      "https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-46.xml?part=545",
+      "https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-46.xml?part=502",
+      "https://www.fmc.gov/ocean-shipping-reform-act-of-2022-implementation/guidance-on-charge-complaint-interim-procedure/"
+    ]
+  },
+  "elements": [
+    {
+      "key": "541.6(a)(1)",
+      "group": "identifying",
+      "text": "The Bill of Lading number(s);",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "bill_of_lading"
+    },
+    {
+      "key": "541.6(a)(2)",
+      "group": "identifying",
+      "text": "The container number(s);",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "container_number"
+    },
+    {
+      "key": "541.6(a)(3)",
+      "group": "identifying",
+      "text": "For imports, the port(s) of discharge; and",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import"
+      ],
+      "field": "port_of_discharge"
+    },
+    {
+      "key": "541.6(a)(4)",
+      "group": "identifying",
+      "text": "The basis for why the billed party is the proper party of interest and thus liable for the charge.",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "basis_for_liability"
+    },
+    {
+      "key": "541.6(b)(1)",
+      "group": "timing",
+      "text": "The invoice date;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "invoice_date"
+    },
+    {
+      "key": "541.6(b)(2)",
+      "group": "timing",
+      "text": "The invoice due date;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "invoice_due_date"
+    },
+    {
+      "key": "541.6(b)(3)",
+      "group": "timing",
+      "text": "The allowed free time in days;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "free_time_days"
+    },
+    {
+      "key": "541.6(b)(4)",
+      "group": "timing",
+      "text": "The start date of free time;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "free_time_start"
+    },
+    {
+      "key": "541.6(b)(5)",
+      "group": "timing",
+      "text": "The end date of free time;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "free_time_end"
+    },
+    {
+      "key": "541.6(b)(6)",
+      "group": "timing",
+      "text": "For imports, the container availability date;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import"
+      ],
+      "field": "container_availability_date"
+    },
+    {
+      "key": "541.6(b)(7)",
+      "group": "timing",
+      "text": "For exports, the earliest return date; and",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "export"
+      ],
+      "field": "earliest_return_date"
+    },
+    {
+      "key": "541.6(b)(8)",
+      "group": "timing",
+      "text": "The specific date(s) for which demurrage and/or detention were charged.",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "charged_dates"
+    },
+    {
+      "key": "541.6(c)(1)",
+      "group": "rate",
+      "text": "The total amount due;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "total_amount_due"
+    },
+    {
+      "key": "541.6(c)(2)",
+      "group": "rate",
+      "text": "The applicable detention or demurrage rule (e.g., the tariff name and rule number, terminal schedule, applicable service contract number and section, or applicable negotiated arrangement) on which the daily rate is based; and",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "applicable_rule"
+    },
+    {
+      "key": "541.6(c)(3)",
+      "group": "rate",
+      "text": "The specific rate or rates per the applicable tariff rule or service contract.",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "specific_rate"
+    },
+    {
+      "key": "541.6(d)(1)",
+      "group": "dispute",
+      "text": "The email, telephone number, or other appropriate contact information for questions or request for fee mitigation, refund, or waiver;",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "dispute_contact"
+    },
+    {
+      "key": "541.6(d)(2)",
+      "group": "dispute",
+      "text": "Digital means, such as a URL address, QR code, or digital watermark, that directs the billed party to a publicly accessible website that provides a detailed description of information or documentation that the billed party must provide to successfully request fee mitigation, refund, or waiver; and",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "dispute_digital_means"
+    },
+    {
+      "key": "541.6(d)(3)",
+      "group": "dispute",
+      "text": "Defined timeframes that comply with the billing practices in this part, during which the billed party must request a fee mitigation, refund, or waiver and within which the billing party will resolve such requests.",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "dispute_timeframes"
+    },
+    {
+      "key": "541.6(e)(1)",
+      "group": "certification",
+      "text": "The charges are consistent with any of the Federal Maritime Commission's rules related to demurrage and detention, including, but not limited to, this part and 46 CFR 545.5; and",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "cert_consistent_with_rules"
+    },
+    {
+      "key": "541.6(e)(2)",
+      "group": "certification",
+      "text": "The billing party's performance did not cause or contribute to the underlying invoiced charges.",
+      "verified": "VERBATIM",
+      "applies_to": [
+        "import",
+        "export"
+      ],
+      "field": "cert_performance_did_not_contribute"
+    }
+  ],
+  "clocks": [
+    {
+      "cite": "46 CFR 541.7(a)",
+      "trigger": "date the charge was last incurred",
+      "days": 30,
+      "day_type": "calendar",
+      "who": "Issuance of demurrage and detention invoices",
+      "text": "A billing party must issue a demurrage or detention invoice within thirty (30) calendar days from the date on which the charge was last incurred. If the billing party does not issue a demurrage or detention invoice within thirty (30) calendar days from the date on which the charge was last incurred, then the billed party is not required to pay the charge.",
+      "verified": "VERBATIM"
+    },
+    {
+      "cite": "46 CFR 541.7(b)",
+      "trigger": "issuance date of the upstream invoice the NVOCC received",
+      "days": 30,
+      "day_type": "calendar",
+      "who": "NVOCC re-billing window",
+      "text": "If the billing party is a non-vessel-operating common carrier, then it must issue a demurrage or detention invoice within thirty (30) calendar days from the issuance date of the demurrage or detention invoice it received. If such a billing party does not issue a demurrage or detention invoice within thirty (30) calendar days from the issuance date of the demurrage or detention invoice it received, then the billed party is not required to pay the charge.",
+      "verified": "VERBATIM"
+    },
+    {
+      "cite": "46 CFR 541.7(c)",
+      "trigger": "notice to the NVOCC's billing party that the charge is disputed",
+      "days": 30,
+      "day_type": "calendar",
+      "who": "NVOCC additional dispute window",
+      "text": "A non-vessel-operating common carrier (NVOCC) can be both a billing and billed party in relation to the same charge. When an NVOCC is acting in both roles, it can inform its billing party that the charge has been disputed by the NVOCC's billed party. The NVOCC's billing party must then provide an additional thirty (30) calendar days for the NVOCC to dispute the charge upon this notice.",
+      "verified": "VERBATIM"
+    },
+    {
+      "cite": "46 CFR 541.7(d)",
+      "trigger": "date the charge was last incurred",
+      "days": 30,
+      "day_type": "calendar",
+      "who": "Re-issuance to the correct billed party",
+      "text": "If the billing party invoices an incorrect person, the billing party may issue an invoice to the correct billed party provided that such issuance is within thirty (30) calendar days from the date on which the charge was last incurred. If the billing party does not issue this corrected demurrage or detention invoice within thirty (30) calendar days from the date on which the charge was last incurred, then the billed party is not required to pay the charge.",
+      "verified": "VERBATIM"
+    },
+    {
+      "cite": "46 CFR 541.8(a)",
+      "trigger": "invoice issuance date",
+      "days": 30,
+      "day_type": "calendar",
+      "who": "Requests for fee mitigation, refund, or waiver",
+      "text": "The billing party must allow the billed party at least thirty (30) calendar days from the invoice issuance date to request mitigation, refund, or waiver of fees from the billing party.",
+      "verified": "VERBATIM"
+    },
+    {
+      "cite": "46 CFR 541.8(b)",
+      "trigger": "date the billing party received the request",
+      "days": 30,
+      "day_type": "calendar",
+      "who": "Billing party resolution window",
+      "text": "If a billing party receives a fee mitigation, refund, or waiver request from a billed party, the billing party must attempt to resolve the request within thirty (30) calendar days of receiving such a request or at a later date as agreed upon by both parties.",
+      "verified": "VERBATIM"
+    }
+  ],
+  "consequences": [
+    {
+      "cite": "46 CFR 541.5",
+      "heading": "Failure to include required information",
+      "text": "Failure to include any of the required minimum information in this part in a demurrage or detention invoice eliminates any obligation of the billed party to pay the applicable charge.",
+      "verified": "VERBATIM"
+    }
+  ],
+  "factors_545_5": [
+    {
+      "key": "545.5(c)(2)(i)",
+      "label": "Cargo availability",
+      "text": "The Commission may consider in the reasonableness analysis the extent to which demurrage practices and regulations relate demurrage or free time to cargo availability for retrieval.",
+      "fact_field": "cargo_not_available_dates",
+      "evidence": "terminal availability screenshots, container status history, or the carrier's own availability notices for each date claimed",
+      "enumerated": true,
+      "verified": "VERBATIM"
+    },
+    {
+      "key": "545.5(c)(2)(ii)",
+      "label": "Empty container return",
+      "text": "Absent extenuating circumstances, practices and regulations that provide for imposition of detention when it does not serve its incentivizing purposes, such as when empty containers cannot be returned, are likely to be found unreasonable.",
+      "fact_field": "empty_return_refused_dates",
+      "evidence": "refused-return records, terminal empty-receiving restrictions, or trucker turn-away notes for each date claimed",
+      "enumerated": true,
+      "verified": "VERBATIM"
+    },
+    {
+      "key": "545.5(c)(2)(iii)",
+      "label": "Notice of cargo availability",
+      "text": "In assessing the reasonableness of demurrage practices and regulations, the Commission may consider whether and how regulated entities provide notice to cargo interests that cargo is available for retrieval. The Commission may consider the type of notice, to whom notice is provided, the format of notice, method of distribution of notice, the timing of notice, and the effect of the notice.",
+      "fact_field": "notice_of_availability_given",
+      "evidence": "the availability notice actually received (with its timestamp and addressee), or a statement that no notice was received",
+      "enumerated": true,
+      "verified": "VERBATIM"
+    },
+    {
+      "key": "545.5(c)(2)(iv)",
+      "label": "Government inspections",
+      "text": "In assessing the reasonableness of demurrage and detention practices in the context of government inspections, the Commission may consider the extent to which demurrage and detention are serving their intended purposes and may also consider any extenuating circumstances.",
+      "fact_field": "government_hold_dates",
+      "evidence": "the CBP/USDA/FDA hold or exam notice, and the release date, for each date claimed",
+      "enumerated": true,
+      "verified": "VERBATIM"
+    },
+    {
+      "key": "545.5(c)(1), (f)",
+      "label": "Appointment unavailability",
+      "text": "In assessing the reasonableness of demurrage and detention practices and regulations, the Commission will consider the extent to which demurrage and detention are serving their intended primary purposes as financial incentives to promote freight fluidity. Nothing in this rule precludes the Commission from considering factors, arguments, and evidence in addition to those specifically listed in this rule.",
+      "fact_field": "appointment_unavailable_dates",
+      "evidence": "appointment-system screenshots or booking logs showing no slot was obtainable on each date claimed",
+      "enumerated": false,
+      "verified": "VERBATIM"
+    },
+    {
+      "key": "545.5(c)(1), (f)",
+      "label": "No action could have been incentivised",
+      "text": "In assessing the reasonableness of demurrage and detention practices and regulations, the Commission will consider the extent to which demurrage and detention are serving their intended primary purposes as financial incentives to promote freight fluidity. Nothing in this rule precludes the Commission from considering factors, arguments, and evidence in addition to those specifically listed in this rule.",
+      "fact_field": "charge_could_not_incentivise",
+      "evidence": "a statement of what the billed party could have done differently on the charged days, and why it could not",
+      "enumerated": false,
+      "verified": "VERBATIM"
+    }
+  ],
+  "vacated": [
+    "46 CFR 541.4",
+    "46 CFR 502.303"
+  ],
+  "provenance": {
+    "retrieved": "2026-09-15",
+    "sources": [
+      "https://www.govinfo.gov/content/pkg/CFR-2025-title46-vol9/xml/CFR-2025-title46-vol9-part541.xml",
+      "https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-46.xml?part=541",
+      "https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-46.xml?part=545",
+      "https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-46.xml?part=502",
+      "https://www.fmc.gov/ocean-shipping-reform-act-of-2022-implementation/guidance-on-charge-complaint-interim-procedure/"
+    ],
+    "rules": {
+      "46 CFR 541.4": "VACATED",
+      "46 CFR 541.5": "VERBATIM",
+      "46 U.S.C. 41310": "VERBATIM_UPSTREAM",
+      "46 CFR 545.5": "VERBATIM",
+      "46 CFR 502.62": "VERBATIM",
+      "46 CFR 502.301, 502.302, 502.304": "VERBATIM",
+      "46 CFR 502.303": "VACATED",
+      "FMC charge-complaint guidance": "VERBATIM",
+      "46 CFR 545.5(c)(2)(i)": "VERBATIM",
+      "46 CFR 545.5(c)(2)(ii)": "VERBATIM",
+      "46 CFR 545.5(c)(2)(iii)": "VERBATIM",
+      "46 CFR 545.5(c)(2)(iv)": "VERBATIM",
+      "46 CFR 545.5(c)(1), (f)": "VERBATIM",
+      "46 CFR 541.7(a)": "VERBATIM",
+      "46 CFR 541.7(b)": "VERBATIM",
+      "46 CFR 541.7(c)": "VERBATIM",
+      "46 CFR 541.7(d)": "VERBATIM",
+      "46 CFR 541.8(a)": "VERBATIM",
+      "46 CFR 541.8(b)": "VERBATIM",
+      "46 CFR 541.6(a)(1)": "VERBATIM",
+      "46 CFR 541.6(a)(2)": "VERBATIM",
+      "46 CFR 541.6(a)(3)": "VERBATIM",
+      "46 CFR 541.6(a)(4)": "VERBATIM",
+      "46 CFR 541.6(b)(1)": "VERBATIM",
+      "46 CFR 541.6(b)(2)": "VERBATIM",
+      "46 CFR 541.6(b)(3)": "VERBATIM",
+      "46 CFR 541.6(b)(4)": "VERBATIM",
+      "46 CFR 541.6(b)(5)": "VERBATIM",
+      "46 CFR 541.6(b)(6)": "VERBATIM",
+      "46 CFR 541.6(b)(7)": "VERBATIM",
+      "46 CFR 541.6(b)(8)": "VERBATIM",
+      "46 CFR 541.6(c)(1)": "VERBATIM",
+      "46 CFR 541.6(c)(2)": "VERBATIM",
+      "46 CFR 541.6(c)(3)": "VERBATIM",
+      "46 CFR 541.6(d)(1)": "VERBATIM",
+      "46 CFR 541.6(d)(2)": "VERBATIM",
+      "46 CFR 541.6(d)(3)": "VERBATIM",
+      "46 CFR 541.6(e)(1)": "VERBATIM",
+      "46 CFR 541.6(e)(2)": "VERBATIM"
+    },
+    "unverified": [],
+    "vacated": [
+      "46 CFR 541.4",
+      "46 CFR 502.303"
+    ]
+  }
+}
