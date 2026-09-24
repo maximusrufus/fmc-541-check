@@ -157,6 +157,17 @@ If you hold real carrier invoices (redact account/container numbers and
 amounts as you see fit) and can contribute a test fixture or report a
 parsing miss, open an issue — see `CONTRIBUTING.md`.
 
+## Use the rules from another language
+
+`rules/fmc-541.json` is a single generated JSON document carrying every
+rule this package encodes (the 20 541.6 elements, the 541.7/541.8 clocks,
+541.5's consequence text, the 545.5 factors, and the vacated-sections
+list) — generated from, and drift-tested against, the same Python objects
+`demurragedesk/screen.py` runs against invoices. `rules/fmc-541.d.ts` has
+the TypeScript types, `rules/example.ts` shows computing an invoice
+deadline and checking for missing elements, and `rules/README.md` has the
+full details, regeneration command, and provenance guarantee.
+
 ## Layout
 
 ```
