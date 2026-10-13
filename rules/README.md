@@ -67,7 +67,7 @@ Order to Show Cause) as the one real-world validation point for the
 541.7(a) timing check. Whether a **reissued** invoice restarts the
 541.7(a) clock from its reissue date, or remains bound by the original
 "last incurred" date, is an open question pending a Commission
-decision expected around **2026-10-08** — this export does not take a
+decision now due **2027-02-08** (second extension, served 2026-09-23) — this export does not take a
 position on it; `days`/`trigger` for `541.7(a)` describe only the
 undisputed baseline rule (30 calendar days from the date the charge was
 last incurred).
