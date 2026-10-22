@@ -448,7 +448,7 @@ RULE_41310 = {
         "applicable law or regulation, shall promptly order the refund of "
         "charges paid."
     ),
-    # Retrieved by the orchestrator against primary statutory text, not by this
+    # Retrieved against primary statutory text, not by this
     # module's own fetches.  Substance (submission right + refund order) is
     # relied on; the connective wording is a summary, so it is flagged.
     "verified": "VERBATIM_UPSTREAM",
